@@ -1,57 +1,62 @@
-import { useEffect, useState } from "react";
-
 const CountdownTimer = () => {
-  const [time, setTime] = useState({
-    days: 45,
-    hours: 7,
-    minutes: 0,
-    seconds: 0
-  });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const TimeBlock = ({ value, label }: { value: number; label: string }) => (
-    <div className="bg-primary text-primary-foreground rounded-xl p-4 min-w-[80px] text-center shadow-elevated">
-      <div className="text-3xl font-bold mb-1">{value.toString().padStart(2, '0')}</div>
-      <div className="text-sm uppercase tracking-wide opacity-90">{label}</div>
-    </div>
-  );
-
   return (
-    <div className="bg-warm-peach -mt-12 relative z-20">
-      <div className="container mx-auto px-4 py-8">
-        <div className="bg-card rounded-2xl shadow-elevated p-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-yellow-accent/10 rounded-full flex items-center justify-center">
-              <span className="text-3xl">🏆</span>
-            </div>
+    <div 
+      className="bg-[#FFCEB8] -mt-12 relative z-20 flex-shrink-0"
+      style={{
+        width: '1495.541px',
+        height: '250.59px',
+        transform: 'rotate(-1.69deg)'
+      }}
+    >
+      <div className="container mx-auto px-4 py-8 h-full flex items-center justify-center"
+           style={{ transform: 'rotate(1.69deg)' }}>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Left side - Trophy and Grand Prizes */}
+          <div className="flex items-center gap-6">
+            <img 
+              src="/trophee.png" 
+              alt="Trophy" 
+              className="w-20 h-20 object-contain"
+            />
             <div>
-              <h3 className="text-2xl font-bold text-foreground">Grand Prizes</h3>
-              <p className="text-muted-foreground">Tap. Play. Learn.</p>
+              <h3 className="text-4xl font-bold text-gray-800 mb-2">Grand</h3>
+              <h3 className="text-4xl font-bold text-gray-800 -mt-2">Prizes</h3>
+              <p className="text-gray-600 text-sm mt-1">Win Amazing Rewards</p>
             </div>
           </div>
           
-          <div className="flex gap-3">
-            <TimeBlock value={time.days} label="Days" />
-            <TimeBlock value={time.hours} label="Hours" />
-            <TimeBlock value={time.minutes} label="Minutes" />
+          {/* Center - Orange Stats Card */}
+          <div className="bg-orange-500 rounded-3xl px-8 py-6 text-white shadow-lg">
+            <div className="flex items-center gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold">45</div>
+                <div className="text-sm opacity-90">Days</div>
+              </div>
+              <div className="w-px h-12 bg-white/30"></div>
+              <div className="text-center">
+                <div className="text-4xl font-bold">7</div>
+                <div className="text-sm opacity-90">Rounds</div>
+              </div>
+              <div className="w-px h-12 bg-white/30"></div>
+              <div className="text-center">
+                <div className="text-4xl font-bold">∞</div>
+                <div className="text-sm opacity-90">Wisdom</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right side - Tap Play Learn and Mobile */}
+          <div className="flex items-center gap-6">
+            <div className="text-right">
+              <h3 className="text-4xl font-bold text-gray-800">Tap.</h3>
+              <h3 className="text-4xl font-bold text-gray-800 -mt-2">Play.</h3>
+              <h3 className="text-4xl font-bold text-gray-800 -mt-2">Learn.</h3>
+            </div>
+            <img 
+              src="/Mobile.png" 
+              alt="Mobile App" 
+              className="w-16 h-20 object-contain"
+            />
           </div>
         </div>
       </div>
