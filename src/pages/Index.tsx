@@ -7,8 +7,6 @@ import ExploreEngage from "@/components/ExploreEngage";
 import Timeline from "@/components/Timeline";
 import EventsRounds from "@/components/EventsRounds";
 import ParticipantCategories from "@/components/ParticipantCategories";
-import FinalCTA from "@/components/FinalCTA";
-import TeacherMessage from "@/components/TeacherMessage";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -24,8 +22,6 @@ const Index = () => {
         <Timeline />
         <EventsRounds />
         <ParticipantCategories />
-        <FinalCTA />
-        <TeacherMessage />
       </main>
       <Footer />
     </div>

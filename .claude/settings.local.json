@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nRedesign footer with peach background, waves, and teacher message\n\n- Replace old footer with new design featuring rotated peach background\n- Add trophy icon and Grand Finale title section\n- Add teacher message box with quote in Hindi\n- Position teacher image extending outside the orange box\n- Add decorative wave pattern at the bottom\n- Remove FinalCTA and TeacherMessage components from Index\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
